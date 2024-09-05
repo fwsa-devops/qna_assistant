@@ -57,11 +57,3 @@ def fetch_question(topic, threadId):
         """,
     )
 ```
-
-
-{
-  'question_id': '123', 
-  'answer': 'they help in creating a format that can be inheritered in abstract classes', 
-  'correctness_score': 0.3, 
-  'feedback': "The answer provided contains some accurate elements but also several issues. The statement seems to refer to interfaces or abstract methods in programming languages that allow creation of a format or template that can be inherited by abstract classes. \n\n**Issues**:\n1. Spelling Error: The word 'inheritered' is incorrect. It should be 'inherited'.\n2. Incomplete Explanation: The explanation is too vague and doesn't specifically explain what 'they' refers to, potentially leading to confusion. In context, this could mean 'interfaces' or 'abstract methods'.\n3. Clarity: There's a lack of clarity about what the 'format' refers to, which may confuse the reader.\n\n**Suggestions for Improvement**:\n- Clarify what 'they' refers to and give more context to the statement.\n- Correct the spelling to 'inherited'.\n- Expand on the role of interfaces or abstract methods/classes in programming to help readers better understand the concept being described.\n\nBy addressing these issues, the explanation will become more precise and informative."
-}

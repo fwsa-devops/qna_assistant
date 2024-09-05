@@ -44,8 +44,8 @@ if topic:
 
             # Placeholder for API call to grade the answer
             # Simulated grading response
-            correctness_score = str(grade_answer["correctness_score"])
-            feedback = grade_answer["feedback"]
+            correctness_score = grade_answer.correctness_score
+            feedback = grade_answer.feedback
 
             st.write(f"**Correctness Score:** {correctness_score}")
             st.write(f"**Feedback:** {feedback}")
