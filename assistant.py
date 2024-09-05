@@ -137,14 +137,17 @@ def grade_answer(answer, threadId):
     messages = client.beta.threads.messages.list(thread_id=thread.id)
     feedback_str = messages.data[0].content[0].text.value
     feedback = json.loads(feedback_str)
-    res = Answer(
-        id=int(feedback["id"]),
-        question_id=int(feedback["question_id"]),
-        answer=feedback["answer"],
-        correctness_score=float(feedback["correctness_score"]),
-        feedback=feedback["feedback"],
-    )
-    return res
+    res = {
+        "id": int(feedback["id"]),
+        "question_id": int(feedback["question_id"]),
+        "answer": feedback["answer"],
+        "score": float(feedback["correctness_score"]),
+        "feedback": feedback["feedback"],
+    }
+    
+    score = float(feedback["correctness_score"])
+    feedback = feedback["feedback"]
+    return score, feedback
 
 
 def create_thread():
