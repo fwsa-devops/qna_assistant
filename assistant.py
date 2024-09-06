@@ -26,9 +26,17 @@ class QuestionType(Enum):
     OTHER = "other"
 
 
+from typing import Dict
+
+
+class InLanguage(BaseModel):
+    in_english: str
+    in_tamil: str
+
+
 class Question(BaseModel):
     id: int
-    question: str
+    question: InLanguage
     type: str
     difficulty: str
 
@@ -38,7 +46,7 @@ class Answer(BaseModel):
     question_id: int
     answer: str
     correctness_score: float
-    feedback: str
+    feedback: InLanguage
 
 
 client = OpenAI()
@@ -144,7 +152,7 @@ def grade_answer(answer, threadId):
         "score": float(feedback["correctness_score"]),
         "feedback": feedback["feedback"],
     }
-    
+
     score = float(feedback["correctness_score"])
     feedback = feedback["feedback"]
     return score, feedback
